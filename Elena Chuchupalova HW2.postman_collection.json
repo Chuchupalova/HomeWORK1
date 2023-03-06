@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "4dce50aa-cdd9-4cd4-9349-eaa176cd70da",
+		"name": "Elena Chuchupalova HW2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23740640"
+	},
+	"item": [
+		{
+			"name": "Создать пользователя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Check\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Willi\",\r\n  \"lastName\": \"Smith\",\r\n  \"email\": \"smithh@smith.com\",\r\n  \"password\": \"Qwerty12345\",\r\n  \"repeatPassword\": \"Qwerty12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto.forstudy.space/api/auth/signup/",
+					"protocol": "https",
+					"host": [
+						"qauto",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Залогиниться",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Check\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"smith@smith.com\",\r\n  \"password\": \"Qwerty12345\",\r\n  \"remember\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto.forstudy.space/api/auth/signin",
+					"protocol": "https",
+					"host": [
+						"qauto",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать Porshe 911",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Check\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"carBrandId\": 1,\r\n  \"carModelId\": 1,\r\n  \"mileage\": 122\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto.forstudy.space/api/cars",
+					"protocol": "https",
+					"host": [
+						"qauto",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление расхода",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Check\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"carId\": 27421,\r\n  \"reportedAt\": \"2022-10-26\",\r\n  \"mileage\": 125,\r\n  \"liters\": 11,\r\n  \"totalCost\": 11,\r\n  \"forceMileage\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto.forstudy.space/api/expenses",
+					"protocol": "https",
+					"host": [
+						"qauto",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Разлогиниться",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Check\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto.forstudy.space/api/auth/logout/",
+					"protocol": "https",
+					"host": [
+						"qauto",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
